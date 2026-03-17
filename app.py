@@ -12,7 +12,7 @@ import os
 def conectar_db():
     # En Streamlit Cloud, agrega DB_URL en la sección "Secrets"
     try:
-        conn = psycopg2.connect(st.secrets["DB_URL"])
+        conn = psycopg2.connect(st.secrets["postgresql://postgres:[YOUR-PASSWORD]@db.kyvwrwvfeiejxtlujlcn.supabase.co:5432/postgres"])
         return conn
     except Exception as e:
         st.error(f"Error de conexión: {e}")
